@@ -1,0 +1,14 @@
+version: "1.1"
+name: JSONPlaceholder Test
+tests:
+  getPost:
+    steps:
+      - name: Fetch Post
+        http:
+          url: https://jsonplaceholder.typicode.com/posts/1
+          method: GET
+          check:
+            status: 200
+            jsonpath:
+              $.userId: 1
+              $.id: 1
